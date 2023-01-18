@@ -1,0 +1,61 @@
+$p1:   2px;
+$p2:   4px;
+$p3:   8px;
+$p4:  16px;
+$p5:  32px;
+$p6:  64px;
+$p7: 128px;
+$p8: 256px;
+$p9: 512px;
+
+* { margin: 0; padding: 0; }
+
+/*** POSITIONING ***/
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position:    fixed; }
+
+/*** ABSOLUTE/FIXED POSITIONING ***/
+.top-left     {    top: 0;  left: 0; }
+.top          {    top: 0;           }
+.top-right    {    top: 0; right: 0; }
+.right        {  right: 0;           }
+.bottom-right { bottom: 0; right: 0; }
+.bottom       { bottom: 0;           }
+.bottom-left  { bottom: 0;  left: 0; }
+.left         {   left: 0;           }
+
+/*** DISPLAY ***/
+.flex { display: flex; }
+.grid { display: grid; }
+
+/*** GRID TEMPLATES ***/
+/*   columns x rows   */
+.grid-3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows:    repeat(2, 1fr);
+}
+
+/*** FLEX TEMPLATES ***/
+.flex-column { display: flex; flex-direction: column; }
+.flex-row    { display: flex; flex-direction:    row; }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jc-center  { justify-content:        center; }
+.js-around  { justify-content:  space-around; }
+.jc-evenly  { justify-content:  space-evenly; }
+.jc-between { justify-content: space-between; }
+
+.ai-center { align-items: center; }
+
+/*** HEIGHTS | WIDTHS ***/
+.full-height, .full { height: 100%; }
+.full-width,  .full { width:  100%; }
+.viewport-height, .viewport { height: 100vh; }
+.viewport-width,  .viewport { width:  100vw; }
