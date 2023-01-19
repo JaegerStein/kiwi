@@ -5,6 +5,6 @@ Personal hobby project, please ignore me
 
 jsdelivr for stylesheet:
 
-```
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi/dist/style/kiwi.min.css">
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi/dist/style/kiwi.min.css">
 ```
