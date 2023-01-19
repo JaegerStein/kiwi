@@ -54,8 +54,162 @@ $p9: 512px;
 
 .ai-center { align-items: center; }
 
+/*** FLEX/GRID GAPS ***/
+.gap1 { gap: $p1; }
+.gap2 { gap: $p2; }
+.gap3 { gap: $p3; }
+.gap4 { gap: $p4; }
+.gap5 { gap: $p5; }
+.gap6 { gap: $p6; }
+.gap7 { gap: $p7; }
+.gap8 { gap: $p8; }
+.gap9 { gap: $p9; }
+
+/*** FLEX GROW ***/
+.grow1 { flex-grow: 1; }
+.grow2 { flex-grow: 2; }
+.grow3 { flex-grow: 3; }
+.grow4 { flex-grow: 4; }
+.grow5 { flex-grow: 5; }
+.grow6 { flex-grow: 6; }
+.grow7 { flex-grow: 7; }
+.grow8 { flex-grow: 8; }
+.grow9 { flex-grow: 9; }
+/* makes all children grow equally */
+.grow-children > * { flex-grow: 1; }
+
+
 /*** HEIGHTS | WIDTHS ***/
 .full-height, .full { height: 100%; }
 .full-width,  .full { width:  100%; }
 .viewport-height, .viewport { height: 100vh; }
 .viewport-width,  .viewport { width:  100vw; }
+.viewport-max-height { max-height: 100vh; }
+.viewport-max-width  { max-width:  100vw; }
+
+/*** WIDTH IN PX ***/
+.w1 { width: $p1; }
+.w2 { width: $p2; }
+.w3 { width: $p3; }
+.w4 { width: $p4; }
+.w5 { width: $p5; }
+.w6 { width: $p6; }
+.w7 { width: $p7; }
+.w8 { width: $p8; }
+.w9 { width: $p9; }
+.w78 { width: $p7 + $p8; }
+
+/*** WIDTH AS A FRACTION ***/
+.w-15 { width: 100% * (1 / 5); }
+.w-25 { width: 100% * (2 / 5); }
+.w-45 { width: 100% * (4 / 5); }
+.w-23 { width: 100% * (2 / 3); }
+
+/*** HEIGHT IN PX ***/
+.h1 { height: $p1; }
+.h2 { height: $p2; }
+.h3 { height: $p3; }
+.h4 { height: $p4; }
+.h5 { height: $p5; }
+.h6 { height: $p6; }
+.h7 { height: $p7; }
+.h8 { height: $p8; }
+.h9 { height: $p9; }
+
+/*** HEIGHT AS A FRACTION ***/
+.h-12 { height: 100% * (1 / 2)}
+.h-45 { height: 100% * (4 / 5);}
+
+/*** BORDER RADIUS ***/
+.br1 { border-radius: $p1; }
+.br2 { border-radius: $p2; }
+.br3 { border-radius: $p3; }
+.br4 { border-radius: $p4; }
+.br5 { border-radius: $p5; }
+.br6 { border-radius: $p6; }
+.br7 { border-radius: $p7; }
+.br8 { border-radius: $p8; }
+.br9 { border-radius: $p9; }
+/* makes elements round */
+.br-max, .round { border-radius: 9999px; }
+
+/*** PADDINGS ***/
+.pad1 { padding: $p1; }
+.pad2 { padding: $p2; }
+.pad3 { padding: $p3; }
+.pad4 { padding: $p4; }
+.pad5 { padding: $p5; }
+.pad6 { padding: $p6; }
+.pad7 { padding: $p7; }
+.pad8 { padding: $p8; }
+.pad9 { padding: $p9; }
+
+/*** MARGIN-TOP ***/
+.m-t1 { margin-top: $p1; }
+.m-t2 { margin-top: $p2; }
+.m-t3 { margin-top: $p3; }
+.m-t4 { margin-top: $p4; }
+.m-t5 { margin-top: $p5; }
+.m-t6 { margin-top: $p6; }
+.m-t7 { margin-top: $p7; }
+.m-t8 { margin-top: $p8; }
+.m-t9 { margin-top: $p9; }
+
+/*** MARGIN-RIGHT ***/
+.m-r1 { margin-right: $p1; }
+.m-r2 { margin-right: $p2; }
+.m-r3 { margin-right: $p3; }
+.m-r4 { margin-right: $p4; }
+.m-r5 { margin-right: $p5; }
+.m-r6 { margin-right: $p6; }
+.m-r7 { margin-right: $p7; }
+.m-r8 { margin-right: $p8; }
+.m-r9 { margin-right: $p9; }
+
+/*** MARGIN-TOP/BOTTOM ***/
+.m-tb1 { margin: $p1 0; }
+.m-tb2 { margin: $p2 0; }
+.m-tb3 { margin: $p3 0; }
+.m-tb4 { margin: $p4 0; }
+.m-tb5 { margin: $p5 0; }
+.m-tb6 { margin: $p6 0; }
+.m-tb7 { margin: $p7 0; }
+.m-tb8 { margin: $p8 0; }
+.m-tb9 { margin: $p9 0; }
+
+/*** SQUARE SIZES ***/
+.square1 { width: $p1; height: $p1; }
+.square2 { width: $p2; height: $p2; }
+.square3 { width: $p3; height: $p3; }
+.square4 { width: $p4; height: $p4; }
+.square5 { width: $p5; height: $p5; }
+.square6 { width: $p6; height: $p6; }
+.square7 { width: $p7; height: $p7; }
+.square8 { width: $p8; height: $p8; }
+.square9 { width: $p9; height: $p9; }
+
+.border-box { box-sizing: border-box; }
+
+.pointer:hover { cursor: pointer; }
+
+.gray { filter: grayscale(1); }
+
+/*** OPACITY ***/
+.opacity-0  { opacity:   0; }
+.opacity-01 { opacity: 10%; }
+.opacity-02 { opacity: 20%; }
+.opacity-03 { opacity: 30%; }
+.opacity-04 { opacity: 40%; }
+.opacity-05 { opacity: 50%; }
+.opacity-06 { opacity: 60%; }
+.opacity-07 { opacity: 70%; }
+.opacity-08 { opacity: 80%; }
+.opacity-09 { opacity: 90%; }
+.opacity-1  { opacity:   1; }
+
+.hidden { display: none; }
+
+.ofy-auto { overflow-y: auto; }
+.ofy-hidden { overflow-y: hidden; }
+.float-l { float: left; }
+.float-r { float: right; }
