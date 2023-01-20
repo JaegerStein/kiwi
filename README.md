@@ -8,11 +8,11 @@ This is a personal hobby project, please ignore me.
 jsdelivr for stylesheet:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi/dist/style/kiwi.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi@latest/dist/style/kiwi.min.css">
 ```
 
 jsdelivr for javascript:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi/dist/script/kiwi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi@latest/dist/script/kiwi.min.js"></script>
 ```
