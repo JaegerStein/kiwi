@@ -211,6 +211,11 @@
   max-width: 100vw;
 }
 
+.viewport-max {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
 /*** WIDTH IN PX ***/
 .w1 {
   width: 2px;
@@ -610,6 +615,10 @@
 
 .hidden {
   display: none;
+}
+
+.of-hidden {
+  overflow: hidden;
 }
 
 .ofy-auto {

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/script",
     "module": "esnext",
-    "target": "es5",
+    "target": "es2015",
     "strict": true,
     "sourceMap": true,
     "removeComments": true
