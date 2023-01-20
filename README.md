@@ -13,6 +13,6 @@ jsdelivr for stylesheet:
 
 jsdelivr for javascript:
 
-```js
+```html
 <script src="https://cdn.jsdelivr.net/gh/jaegerstein/kiwi/dist/script/kiwi.min.js"></script>
 ```
