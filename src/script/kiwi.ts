@@ -2,6 +2,8 @@ enum KW_TAG {
     DIV = 'div'
 }
 
+interface Style {[key: string]: string;}
+
 const create = (tag: string): HTMLElement => document.createElement(tag);
 const find = (query: string): HTMLElement | null => document.querySelector(query);
 
@@ -15,9 +17,8 @@ class KW {
             const e = create(this.kw_tag);
             e.id = this.kw_id ? this.kw_id : e.id;
             e.classList.add(...this.classes)
-            e.setAttribute('style', this.kw_style || '');
+            if (this.kw_style.size) e.setAttribute('style', this.styleAsString);
             this.kw_el = e;
-            // TODO
             return e;
         }
         return this.kw_el || el();
@@ -50,7 +51,13 @@ class KW {
         return [...this.kw_classes];
     }
 
-    private kw_style?: string;
+    private kw_style: Map<string, string> = new Map();
+
+    public get styleAsString(): string {
+        let styles = '';
+        this.kw_style.forEach((value, key) => styles += `${key}:${value};`)
+        return styles;
+    }
 
 
     private constructor(tag: KW_TAG) {
@@ -81,10 +88,19 @@ class KW {
         return this;
     }
 
-    public style(style: string): KW {
-        // TODO
-        this.kw_style = style;
+    public style(rule: string, value: string): KW;
+    public style(...styles: [string, string][]): KW;
+    public style(style: Style): KW;
+    public style(style?: string | [string, string] | Style): KW {
+        if (typeof style === 'string') this.addStyleRule(style, arguments[1])
+        else if (Array.isArray(style)) for (const tuple of arguments) this.addStyleRule(tuple[0], tuple[1]);
+        else for (const key in style) this.addStyleRule(key, style[key]);
+
         return this;
+    }
+
+    private addStyleRule(key: string, value: string): void {
+        this.kw_style.set(key, value);
     }
 
     /**
@@ -96,7 +112,9 @@ class KW {
 const DIV = KW.DIV();
 
 function ready() {
-    const div = DIV.cls('square9 br5').sid('second').style('box-shadow: 0 0 16px rgba(0,0,0,0.5)');
+    const div = DIV.cls('square9 br5').sid('second')
+        .style(['box-shadow', '0 0 16px rgba(0,0,0,0.5)'], ['box-shadow', '0 0 16px rgba(0,0,0,0.5)'])
+
     find('body')!.appendChild(div.html);
 }
 

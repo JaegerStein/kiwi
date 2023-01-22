@@ -8,6 +8,7 @@ const find = (query) => document.querySelector(query);
 class KW {
     constructor(tag) {
         this.kw_classes = new Set();
+        this.kw_style = new Map();
         this.kw_tag = tag;
     }
     get html() {
@@ -15,7 +16,8 @@ class KW {
             const e = create(this.kw_tag);
             e.id = this.kw_id ? this.kw_id : e.id;
             e.classList.add(...this.classes);
-            e.setAttribute('style', this.kw_style || '');
+            if (this.kw_style.size)
+                e.setAttribute('style', this.styleAsString);
             this.kw_el = e;
             return e;
         };
@@ -34,6 +36,11 @@ class KW {
     get classes() {
         return [...this.kw_classes];
     }
+    get styleAsString() {
+        let styles = '';
+        this.kw_style.forEach((value, key) => styles += `${key}:${value};`);
+        return styles;
+    }
     cls(...classes) {
         classes.forEach(cls => {
             if (typeof cls == "string")
@@ -48,14 +55,25 @@ class KW {
         return this;
     }
     style(style) {
-        this.kw_style = style;
+        if (typeof style === 'string')
+            this.addStyleRule(style, arguments[1]);
+        else if (Array.isArray(style))
+            for (const tuple of arguments)
+                this.addStyleRule(tuple[0], tuple[1]);
+        else
+            for (const key in style)
+                this.addStyleRule(key, style[key]);
         return this;
+    }
+    addStyleRule(key, value) {
+        this.kw_style.set(key, value);
     }
 }
 KW.DIV = () => new KW(KW_TAG.DIV);
 const DIV = KW.DIV();
 function ready() {
-    const div = DIV.cls('square9 br5').sid('second').style('box-shadow: 0 0 16px rgba(0,0,0,0.5)');
+    const div = DIV.cls('square9 br5').sid('second')
+        .style(['box-shadow', '0 0 16px rgba(0,0,0,0.5)'], ['box-shadow', '0 0 16px rgba(0,0,0,0.5)']);
     find('body').appendChild(div.html);
 }
 window.addEventListener('load', ready);
