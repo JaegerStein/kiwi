@@ -1,4 +1,4 @@
-"use strict";
+import { fori } from "./utils.js";
 var KW_TAG;
 (function (KW_TAG) {
     KW_TAG["DIV"] = "div";
@@ -72,9 +72,9 @@ class KW {
 KW.DIV = () => new KW(KW_TAG.DIV);
 const DIV = KW.DIV();
 function ready() {
-    const div = DIV.cls('square9 br5').sid('second')
-        .style(['box-shadow', '0 0 16px rgba(0,0,0,0.5)'], ['box-shadow', '0 0 16px rgba(0,0,0,0.5)']);
-    find('body').appendChild(div.html);
+    fori(10, i => console.log(i));
+    fori(1, 10, i => console.log(i));
+    fori(1, 10, 2, i => console.log(i));
 }
 window.addEventListener('load', ready);
 //# sourceMappingURL=kiwi.js.map

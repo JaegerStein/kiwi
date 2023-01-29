@@ -1,10 +1,22 @@
+import {fori} from "./utils.js";
+
+
 enum KW_TAG {
     DIV = 'div'
 }
 
 interface Style {[key: string]: string;}
 
+/**
+ * Creates a new HTML element with the provided tag
+ * @param tag The tag of the element to be created, e.g. 'div', 'span', 'p', etc.
+ */
 const create = (tag: string): HTMLElement => document.createElement(tag);
+
+/**
+ * Finds the first element matching the provided query in the document
+ * @param query The query to be used to find the element, e.g. '#id', '.class', 'div', etc.
+ */
 const find = (query: string): HTMLElement | null => document.querySelector(query);
 
 class KW {
@@ -112,10 +124,14 @@ class KW {
 const DIV = KW.DIV();
 
 function ready() {
-    const div = DIV.cls('square9 br5').sid('second')
-        .style(['box-shadow', '0 0 16px rgba(0,0,0,0.5)'], ['box-shadow', '0 0 16px rgba(0,0,0,0.5)'])
+    // const div = DIV.cls('square9 br5').sid('second')
+    //     .style(['box-shadow', '0 0 16px rgba(0,0,0,0.5)'], ['box-shadow', '0 0 16px rgba(0,0,0,0.5)'])
+    //
+    // find('body')!.appendChild(div.html);
 
-    find('body')!.appendChild(div.html);
+    fori(10, i => console.log(i));
+    fori(1, 10, i => console.log(i));
+    fori(1, 10, 2, i => console.log(i));
 }
 
 window.addEventListener('load', ready);
