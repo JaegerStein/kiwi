@@ -1,10 +1,10 @@
-import { fori } from "./utils.js";
+import test from "./test.js";
 var KW_TAG;
 (function (KW_TAG) {
     KW_TAG["DIV"] = "div";
 })(KW_TAG || (KW_TAG = {}));
-const create = (tag) => document.createElement(tag);
-const find = (query) => document.querySelector(query);
+export const create = (tag) => document.createElement(tag);
+export const find = (query) => document.querySelector(query);
 class KW {
     constructor(tag) {
         this.kw_classes = new Set();
@@ -72,9 +72,7 @@ class KW {
 KW.DIV = () => new KW(KW_TAG.DIV);
 const DIV = KW.DIV();
 function ready() {
-    fori(10, i => console.log(i));
-    fori(1, 10, i => console.log(i));
-    fori(1, 10, 2, i => console.log(i));
+    test();
 }
 window.addEventListener('load', ready);
 //# sourceMappingURL=kiwi.js.map
