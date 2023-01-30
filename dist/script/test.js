@@ -6,7 +6,7 @@ function rangedDice(x) {
         return "1D6";
     x = Math.ceil((x - 6) / 2);
     let nFour = 0;
-    let nSix = 2 + Math.floor((x - 1) / 4);
+    let nSix = 2 + Math.floor((x - 1) / 3);
     const e = (m) => !((x - m) % 3);
     if (e(1)) {
         nFour = 2;
